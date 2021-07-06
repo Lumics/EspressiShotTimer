@@ -26,7 +26,6 @@
   #include <Fonts/Custom/Roboto_Thin_24.h>    // CF_RT24
   #include <Fonts/Custom/Satisfy_24.h>        // CF_S24
   #include <Fonts/Custom/Yellowtail_32.h>     // CF_Y32
-  #include <Fonts/Custom/SensirionSimple25pt7b.h>     // Sensirion
   #include <Fonts/Custom/ArchivoNarrow_Regular10pt7b.h>     // Free Fonts
   #include <Fonts/Custom/ArchivoNarrow_Regular50pt7b.h>     // Free Fonts
 #endif
