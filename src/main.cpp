@@ -5,10 +5,8 @@
 // Display
 // This Gadget has a 1.14inch TFT display with a width of 135 and a height of 240
 // Go to TTGO T-Display's Github Repository
-// Download the code as zip, extract it and copy the Folder TFT_eSPI
 //  => https://github.com/Xinyuan-LilyGO/TTGO-T-Display/archive/master.zip
-// to your Arduino library path
-#include "TFT_eSPI.h" // Graphics and font library for ST7735 driver chip
+#include <TFT_eSPI.h> // Graphics and font library for ST7735 driver chip
 #include <SPI.h>
 TFT_eSPI tft = TFT_eSPI(135,240);  // Invoke library, pins defined in User_Setup.h
 
