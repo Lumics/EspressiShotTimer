@@ -9,7 +9,7 @@ This project is build with PlatformIO, VSCode and the Arduino framework.
 ## How it works
 The pump in most espresso machines is basically just a motor which produces a magnetic field when it gets power. This can be measured with a read sensor. 
 
-I wanted to use this effect as it is easy to add a read sensor to most machines. You can easily glue/tape it to the pump and doesn't need much hardware adjustments or coffee machine knowledge. This makes it feasable for everybody to install this espresso shot timer at home. 
+I wanted to use this effect as it is easy to add a read sensor to most machines. You can easily glue/tape it to the pump and doesn't need much hardware adjustments or coffee machine knowledge. This makes it feasible for everybody to install this espresso shot timer at home. 
 Furthermore, I decided to use an external 5V power supply, as I think it is too dangerous for most users to use the internal coffee machine electricity (230V can be dangerous!).
 
 
@@ -21,7 +21,7 @@ In the following you have a list of suggestions of parts you need to build this 
 
 * Cable connector: [PCB Screw Terminal](https://www.aliexpress.com/item/1000006518504.html?spm=a2g0o.productlist.0.0.753553808svNSN&algo_pvid=null&algo_expid=null&btsid=0b0a556216201400093754778e0179&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_)
 
-* High temperatur [Read sensor](https://www.reichelt.com/de/en/-litt-59135-010-p260410.html?r=1)
+* High temperature [Read sensor](https://www.reichelt.com/de/en/-litt-59135-010-p260410.html?r=1)
 
 * Some [Wires](https://www.aliexpress.com/item/4000009001537.html?spm=a2g0o.productlist.0.0.5fd4257fB5iarJ&algo_pvid=1c5f1618-e462-4103-8249-88205578790c&algo_expid=1c5f1618-e462-4103-8249-88205578790c-0&btsid=0b0a555516201388513911642e8ba7&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_)
 * [Power supply](https://www.aliexpress.com/item/32961533195.html?spm=a2g0o.productlist.0.0.546f4c6508dOeX&algo_pvid=694f3475-df24-46e6-aab0-b50741175e58&algo_exp_id=694f3475-df24-46e6-aab0-b50741175e58-8)  with 5V, 1A. Don't worry about the connector, I just cut it off anyway.
@@ -40,7 +40,7 @@ That is how it looks attached to my coffee machine.
 
 
 ## Wiring
-The wiring is quite simple. I cut off the connector from the power cord of the 5V power supply. The red wire is the 5V (make sure you get a 5V power supply!). This needs to be conected with the 5V pin of the ESP32. The ground wires can then be connected as in the diagram below. The last part is to conect one part of the read sensor with the ESP32 pin 22 to sample if it detected a strong enough magnetic field of a turned on pump. 
+The wiring is quite simple. I cut off the connector from the power cord of the 5V power supply. The red wire is the 5V (make sure you get a 5V power supply!). This needs to be connected with the 5V pin of the ESP32. The ground wires can then be connected as in the diagram below. The last part is to connect one part of the read sensor with the ESP32 pin 22 to sample if it detected a strong enough magnetic field of a turned on pump. 
 <img src="images/wiring.png" width="800">
 
 The placement of the read sensor on the pump takes some trial and error as the magnetic field might no be strong enough to trigger the read sensor at all places on the pump. Below you can see my spot I found works best with my Rocket Espresso machine.
@@ -52,4 +52,4 @@ To code is written for the Arduino framework with the PlatformIo IDE.
 I am not using any of the special capabilities (WIFI & Bluetooth) of the ESP32 at the moment.
 
 ### What the code does
-It samples the read sensor and as soon as it detects a change it will start the counter. If the read sensor is active for more than 15sec it counts this measruement as shot that is getting pulled. That means it the display will show the end count for one minute before the display goes back to sleep. This is implemented due to the fact that my machine from time to time activates to pump to refill the boiler  (about 7-9sec) and I don't want count this as regular shot pulling with activating the display for more than one minute. This doesn't mean it is not counting the refilling of the boiler but it switches off the display to sleep immediately after pump is turned off. 
+It samples the read sensor and as soon as it detects a change it will start the counter. If the read sensor is active for more than 15sec it counts this measurement as shot that is getting pulled. That means that the display will show the end count for one minute before the display goes back to sleep. This is implemented due to the fact that my machine from time to time activates to pump to refill the boiler  (which takes about 7-9sec) and I don't want to count this as regular shot pulling with activating the display for more than one minute. This doesn't mean that the display is not counting the refilling of the boiler but it switches off the display to sleep immediately after the pump is turned off. 
