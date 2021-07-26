@@ -2,6 +2,8 @@
 
 Is a easy to build and install espresso shot timer for almost any portafilter coffee machine. I use it everyday with my Rocket Appartamento Espresso machine. It is great if you want to get repeatable espresso shots.  
 
+This project is build with PlatformIO, VSCode and the Arduino framework.
+
 <img src="images/IMG_2549.jpg" width="800">
 
 ## How it works
@@ -27,7 +29,7 @@ In the following you have a list of suggestions of parts you need to build this 
 * 3D printed housing
 
 ## Some Hardware impressions
-This is the dock. It has a mini PCB with the two screw terminals and a connector for the ESP32. On the bottom side is a little hole to add a magnet so it better holds on my coffee machine. You can find the SWX and .stl file in the CAD folder of this project.
+This is the dock. It has a mini PCB with the two screw terminals and a connector for the ESP32. On the bottom side is a little hole to add a magnet so it better holds on my coffee machine. You can find the .stl file in the CAD folder of this project.
 <img src="images/IMG_2560.jpg" width="800">
 
 This is the custom ESP32 with display from Lilygo in a housing with the dock (buttons have no function at the moment)
