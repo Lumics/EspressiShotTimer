@@ -6,6 +6,9 @@ This project is build with PlatformIO, VSCode and the Arduino framework.
 
 <img src="images/IMG_2549.jpg" width="800">
 
+And here with the machine and the mill from Rocket.
+<img src="images/IMG_2547.jpg" width="800">
+
 ## How it works
 The pump in most espresso machines is basically just a motor which produces a magnetic field when it gets power. This can be measured with a read sensor. 
 
