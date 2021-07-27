@@ -1,7 +1,6 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-
 // Display
 // This Gadget has a 1.14inch TFT display with a width of 135 and a height of 240
 // Go to TTGO T-Display's Github Repository
