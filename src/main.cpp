@@ -39,13 +39,13 @@ void display_timer(String time){
 
 bool sample_reed_sensor() {
   bool detected_change = false;
-  // Sample read sensor 500 times to be sure that the pump is on
-  for (int i = 0; i < 500; i++){
+  // Sample read sensor 50 times to be sure that the pump is on
+  for (int i = 0; i < 50; i++){
     detected_change = !digitalRead(REED_SENSOR_PIN);
-    delay(1);
     if(detected_change){
       return true;
     }
+    delay(1);
   }
   return false;
 }
@@ -77,6 +77,8 @@ void detectChanges() {
     digitalWrite(4, LOW);
     Serial.println("Sleep");
   }
+  // Take it slow and only read every 1s
+  delay(1000);
 }
 
 String getTimer() {
