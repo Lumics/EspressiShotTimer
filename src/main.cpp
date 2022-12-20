@@ -9,7 +9,7 @@
 #include <SPI.h>
 TFT_eSPI tft = TFT_eSPI(135,240);  // Invoke library, pins defined in User_Setup.h
 
-#define REED_SENSOR_PIN 21
+#define REED_SENSOR_PIN 33
 
 
 bool displayOn = true;
@@ -39,8 +39,8 @@ void display_timer(String time){
 
 bool sample_reed_sensor() {
   bool detected_change = false;
-  // Sample read sensor 50 times to be sure that the pump is on
-  for (int i = 0; i < 50; i++){
+  // Sample read sensor 200 times to be sure that the pump is on
+  for (int i = 0; i < 200; i++){
     detected_change = !digitalRead(REED_SENSOR_PIN);
     if(detected_change){
       return true;
@@ -77,8 +77,8 @@ void detectChanges() {
     digitalWrite(4, LOW);
     Serial.println("Sleep");
   }
-  // Take it slow and only read every 1s
-  delay(1000);
+  // Take it slow and only read every 0.5s
+  delay(500);
 }
 
 String getTimer() {

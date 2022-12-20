@@ -25,8 +25,9 @@ In the following you have a list of suggestions of parts you need to build this 
 * High temperature [Reed sensor](https://www.reichelt.com/de/en/-litt-59135-010-p260410.html?r=1)
 
 * Some [Wires](https://www.aliexpress.com/item/4000009001537.html?spm=a2g0o.productlist.0.0.5fd4257fB5iarJ&algo_pvid=1c5f1618-e462-4103-8249-88205578790c&algo_expid=1c5f1618-e462-4103-8249-88205578790c-0&btsid=0b0a555516201388513911642e8ba7&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_)
-* [Power supply](https://www.aliexpress.com/item/32961533195.html?spm=a2g0o.productlist.0.0.546f4c6508dOeX&algo_pvid=694f3475-df24-46e6-aab0-b50741175e58&algo_exp_id=694f3475-df24-46e6-aab0-b50741175e58-8)  with 5V, 1A. Don't worry about the connector, I just cut it off anyway.
+* [Power supply](https://www.aliexpress.us/item/2251832814823467.html?spm=a2g0o.productlist.0.0.10074be6KZ05XQ&algo_pvid=adfc5fdb-c5c5-4d52-aa24-6a72e0842917&algo_exp_id=adfc5fdb-c5c5-4d52-aa24-6a72e0842917-5&pdp_ext_f=%7B%22sku_id%22%3A%2266934215087%22%7D&pdp_npi=2%40dis%21USD%213.57%212.5%21%21%21%21%21%402101d68d16715704109491672e8698%2166934215087%21sea&curPageLogUid=LufYVNifmzBf)  with 3.3V, 1A. Don't worry about the connector, I just cut it off anyway.
 * A small [PCB Prototype Board](https://www.aliexpress.com/item/32588853051.html?spm=a2g0o.productlist.0.0.690f190cdSvO5x&algo_pvid=8745a321-eece-4b08-916e-bb816e874ff8&algo_expid=8745a321-eece-4b08-916e-bb816e874ff8-0&btsid=0b0a555916201387423844532e53c2&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_)
+* 1k Ohm Resistor
 * 3D printed housing
 
 ## Some Hardware impressions
@@ -41,7 +42,7 @@ That is how it looks attached to my coffee machine.
 
 
 ## Wiring
-The wiring is quite simple. I cut off the connector from the power cord of the 5V power supply. The red wire is the 5V (make sure you get a 5V power supply!). This needs to be connected with the 5V pin of the ESP32. The ground wires can then be connected as in the diagram below. The last part is to connect one part of the reed sensor with the ESP32 pin 22 to sample if it detected a strong enough magnetic field of a turned on pump. 
+The wiring is quite simple. I cut off the connector from the power cord of the 3.3V power supply. The red or white wire is the 3.3V (make sure you get a 3.3V power supply!). This needs to be connected with the 3.3V pin of the ESP32. The ground wires can then be connected as in the diagram below. The last part is to connect one part of the reed sensor with the ESP32 pin 33 to sample if it detected a strong enough magnetic field of a turned on pump. To make sure the PIN is not floating I added a 1k Ohm pull-up resistor from the PIN33 to the 3.3V power line.
 <img src="images/wiring.png" width="800">
 
 The placement of the reed sensor on the pump takes some trial and error as the magnetic field might no be strong enough to trigger the reed sensor at all places on the pump. Below you can see my spot I found works best with my Rocket Espresso machine.
